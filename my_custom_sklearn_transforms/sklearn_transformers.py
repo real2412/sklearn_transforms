@@ -15,5 +15,7 @@ class DropColumns(BaseEstimator, TransformerMixin):
         # Retornamos um novo dataframe sem as colunas indesejadas
         try:
           return data.drop(labels=self.columns, axis='columns')
-        except AttributeError as error:
+        except:
+          return data
+        else:
           return data
